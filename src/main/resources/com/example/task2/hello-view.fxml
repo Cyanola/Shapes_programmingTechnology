@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="539.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: #D2E6E7;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task2.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+        <BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="700.0">
+            <children>
+                <Canvas height="427.0" layoutX="2.0" layoutY="2.0" width="700.0" />
+            </children>
+            <center>
+                <Canvas fx:id="canvas" height="372.0" onMouseClicked="#onMouseClicked" width="696.0" BorderPane.alignment="CENTER" />
+            </center>
+            <top>
+                <FlowPane fx:id="flowpane" prefHeight="96.0" prefWidth="700.0" style="-fx-background-color: #D2E6E7;" BorderPane.alignment="CENTER">
+
+                    <children>
+
+                        <Label prefHeight="50.0" prefWidth="81.0" style="-fx-font-family: 'Century Gothic Bold'; -fx-font-size: 15;" text="Название фигуры" wrapText="true">
+                            <FlowPane.margin>
+                                <Insets left="18.0" top="43.0" />
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Marlett" size="18.0" />
+                            </font>
+                            <padding>
+                                <Insets right="2.0" />
+                            </padding>
+                        </Label>
+                        <TextField fx:id="txtCount" prefHeight="36.0" prefWidth="139.0" style="-fx-font-family: 'Century Gothic Bold'; -fx-font-size: 15; -fx-background-radius: 15px; -fx-border-radius: 15;">
+                            <FlowPane.margin>
+                                <Insets left="39.0" top="45.0" />
+                            </FlowPane.margin>
+                            <font>
+                                <Font name="Century Gothic Bold" size="18.0" />
+                            </font>
+                        </TextField>
+                        <Button fx:id="clearbutton" mnemonicParsing="false" onAction="#onClear" style="-fx-background-radius: 15;" text="Очистить">
+                            <FlowPane.margin>
+                                <Insets left="28.0" top="44.0" />
+                            </FlowPane.margin>
+                        </Button>
+                        <Label text="Заливка">
+                            <FlowPane.margin>
+                                <Insets left="418.0" top="-99.0" />
+                            </FlowPane.margin>
+                            <padding>
+                                <Insets left="-16.0" right="-14.0" />
+                            </padding>
+                        </Label>
+                        <ColorPicker fx:id="fillPicker" prefHeight="26.0" prefWidth="31.0" style="-fx-background-radius: 15;">
+                            <FlowPane.margin>
+                                <Insets left="23.0" top="-95.0" />
+                            </FlowPane.margin>
+                            <value>
+                                <Color red="0.8315789699554443" green="0.7170058488845825" blue="0.609824538230896" />
+                            </value>
+                        </ColorPicker>
+                        <Label text="Толщина линии">
+                            <FlowPane.margin>
+                                <Insets left="-73.0" top="-140.0" />
+                            </FlowPane.margin>
+                            <padding>
+                                <Insets left="-22.0" />
+                            </padding>
+                        </Label>
+                        <ColorPicker fx:id="borderPicker" prefHeight="26.0" prefWidth="32.0" style="-fx-background-radius: 15;">
+                            <FlowPane.margin>
+                                <Insets left="-23.0" top="-16.0" />
+                            </FlowPane.margin>
+                            <value>
+                                <Color red="0.4399610161781311" green="0.4736517071723938" blue="0.6421052813529968" />
+                            </value>
+                        </ColorPicker>
+                        <Label text="Граница">
+                            <FlowPane.margin>
+                                <Insets left="-86.0" top="-19.0" />
+                            </FlowPane.margin>
+                            <padding>
+                                <Insets left="-3.0" />
+                            </padding>
+                        </Label>
+                        <Label text="Высота">
+                            <FlowPane.margin>
+                                <Insets left="79.0" top="-20.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <Label text="Ширина">
+                            <FlowPane.margin>
+                                <Insets left="-40.0" top="-92.0" />
+                            </FlowPane.margin>
+                        </Label>
+                        <TextField fx:id="borderCount" prefHeight="26.0" prefWidth="38.0" style="-fx-background-radius: 15;" text="10">
+                            <FlowPane.margin>
+                                <Insets left="-79.0" top="-140.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                        <TextField fx:id="heightCount" prefHeight="26.0" prefWidth="56.0" style="-fx-background-radius: 15;" text="100">
+                            <FlowPane.margin>
+                                <Insets left="43.0" top="-21.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                        <TextField fx:id="widthCount" prefHeight="26.0" prefWidth="56.0" style="-fx-background-radius: 15;" text="100">
+                            <FlowPane.margin>
+                                <Insets left="-55.0" top="-97.0" />
+                            </FlowPane.margin>
+                        </TextField>
+                    </children>
+                </FlowPane>
+            </top>
+            <bottom>
+                <Label fx:id="info" prefHeight="18.0" prefWidth="423.0" BorderPane.alignment="CENTER" />
+            </bottom>
+        </BorderPane>
+    </children>
+</VBox>
