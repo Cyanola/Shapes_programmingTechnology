@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="700.0" spacing="20.0" style="-fx-background-color: mistyrose;" styleClass="Red" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.task1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <FlowPane minHeight="567.0" prefHeight="567.0" prefWidth="700.0" style="-fx-background-color: mistyrose;">
+        <children>
+            <Canvas fx:id="canvas" height="343.0" onMouseClicked="#onMouseClicked" style="-fx-cursor: hand;" width="700.0" />
+            <Button fx:id="button1" minHeight="40.0" mnemonicParsing="false" onAction="#onClick" prefHeight="56.0" prefWidth="100.0" style="-fx-background-color: lightpink;" text="Треугольник (случайное задание)" textAlignment="CENTER" textFill="#ff0073" wrapText="true">
+                <FlowPane.margin>
+                    <Insets left="15.0" top="15.0" />
+                </FlowPane.margin>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            </Button>
+            <Label prefHeight="18.0" prefWidth="77.0" text="Заливка фигуры">
+                <FlowPane.margin>
+                    <Insets bottom="-230.0" left="-100.0" />
+                </FlowPane.margin>
+                <padding>
+                    <Insets right="-15.0" />
+                </padding>
+            </Label>
+            <Button fx:id="button2" minHeight="40.0" mnemonicParsing="false" onAction="#onClick2" prefHeight="40.0" prefWidth="93.0" style="-fx-background-color: lightpink;" text="Круг " textFill="#ff0073">
+                <FlowPane.margin>
+                    <Insets left="40.0" top="15.0" />
+                </FlowPane.margin>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            </Button>
+            <Button fx:id="button3" minHeight="40.0" mnemonicParsing="false" onAction="#onClick3" prefHeight="40.0" prefWidth="104.0" style="-fx-background-color: lightpink;" text="Прямоугольник" textFill="#ff0073">
+                <FlowPane.margin>
+                    <Insets left="40.0" top="15.0" />
+                </FlowPane.margin>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            </Button>
+            <Button fx:id="button4" minHeight="40.0" mnemonicParsing="false" onAction="#onClick4" prefHeight="55.0" prefWidth="84.0" style="-fx-background-color: lightpink;" text="Треугольник (координаты)" textAlignment="CENTER" textFill="#ff0073" wrapText="true">
+                <FlowPane.margin>
+                    <Insets left="40.0" top="15.0" />
+                </FlowPane.margin>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            </Button>
+            <Button fx:id="button5" minHeight="40.0" mnemonicParsing="false" onAction="#onClick5" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: lightpink;" text="Круг (случайное задангие)" textAlignment="CENTER" textFill="#ff0073" wrapText="true">
+                <FlowPane.margin>
+                    <Insets left="40.0" top="15.0" />
+                </FlowPane.margin>
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+            </Button>
+            <ColorPicker fx:id="colorpickerFill" prefWidth="100.0">
+                <FlowPane.margin>
+                    <Insets left="15.0" top="100.0" />
+                </FlowPane.margin>
+                <value>
+                    <Color red="0.7481949329376221" green="0.8842105269432068" blue="0.5927485227584839" />
+                </value>
+            </ColorPicker>
+            <ColorPicker fx:id="colorpickerBorder" prefWidth="100.0">
+                <FlowPane.margin>
+                    <Insets left="15.0" top="100.0" />
+                </FlowPane.margin>
+                <value>
+                    <Color red="0.6480351090431213" green="0.7684210538864136" blue="0.500896692276001" />
+                </value>
+            </ColorPicker>
+            <Label fx:id="labelx1" text="X1">
+                <FlowPane.margin>
+                    <Insets left="28.0" right="-40.0" top="50.0" />
+                </FlowPane.margin>
+            </Label>
+            <Label fx:id="labely1" text="Y1">
+                <FlowPane.margin>
+                    <Insets left="25.0" top="120.0" />
+                </FlowPane.margin>
+            </Label>
+            <TextField fx:id="y1" minHeight="23.0" prefHeight="23.0" prefWidth="30.0">
+                <FlowPane.margin>
+                    <Insets bottom="-100.0" left="10.0" top="15.0" />
+                </FlowPane.margin>
+            </TextField>
+            <TextField minHeight="23.0" prefHeight="23.0" prefWidth="30.0" fx:id="x1">
+                <FlowPane.margin>
+                    <Insets left="-30.0" top="50.0" />
+                </FlowPane.margin>
+            </TextField>
+            <Label fx:id="labelx2" text="X2">
+                <FlowPane.margin>
+                    <Insets left="50.0" right="15.0" top="50.0" />
+                </FlowPane.margin>
+            </Label>
+            <Label fx:id="labely2" text="Y2">
+                <FlowPane.margin>
+                    <Insets left="-28.0" top="120.0" />
+                </FlowPane.margin>
+            </Label>
+            <TextField fx:id="y2" minHeight="-Infinity" prefHeight="23.0" prefWidth="30.0">
+                <FlowPane.margin>
+                    <Insets left="15.0" top="115.0" />
+                </FlowPane.margin>
+            </TextField>
+            <TextField minHeight="23.0" prefHeight="23.0" prefWidth="30.0" fx:id="x2">
+                <FlowPane.margin>
+                    <Insets left="-30.0" top="50.0" />
+                </FlowPane.margin>
+            </TextField>
+            <Label fx:id="labelx3" text="X3">
+                <FlowPane.margin>
+                    <Insets left="50.0" right="15.0" top="50.0" />
+                </FlowPane.margin>
+            </Label>
+            <Label fx:id="labely3" prefHeight="18.0" prefWidth="34.0" text="Y3">
+                <FlowPane.margin>
+                    <Insets left="-28.0" top="120.0" />
+                </FlowPane.margin>
+            </Label>
+            <TextField fx:id="y3" minHeight="-Infinity" prefHeight="23.0" prefWidth="30.0">
+                <FlowPane.margin>
+                    <Insets left="-15.0" top="115.0" />
+                </FlowPane.margin>
+            </TextField>
+            <TextField minHeight="-Infinity" prefHeight="23.0" prefWidth="30.0" fx:id="x3">
+                <FlowPane.margin>
+                    <Insets left="-30.0" top="50.0" />
+                </FlowPane.margin>
+            </TextField>
+            <CheckBox fx:id="check" mnemonicParsing="false" prefHeight="18.0" prefWidth="92.0" selected="true" text="Рисовать" textAlignment="CENTER">
+                <FlowPane.margin>
+                    <Insets left="-400.0" />
+                </FlowPane.margin>
+            </CheckBox>
+            <Label fx:id="label0" text="Задайте свойства:">
+                <FlowPane.margin>
+                    <Insets left="100.0" />
+                </FlowPane.margin>
+            </Label>
+            <Label fx:id="labelBorder" text="Толщина линии">
+                <FlowPane.margin>
+                    <Insets left="120.0" top="75.0" />
+                </FlowPane.margin>
+            </Label>
+            <TextField fx:id="borde" minHeight="-Infinity" prefHeight="23.0" prefWidth="30.0" text="6">
+                <FlowPane.margin>
+                    <Insets left="15.0" top="75.0" />
+                </FlowPane.margin>
+            </TextField>
+            <Label layoutX="25.0" layoutY="544.0" prefHeight="18.0" prefWidth="77.0" text="Цвет границы фигуры">
+                <FlowPane.margin>
+                    <Insets left="130.0" top="-100.0" />
+                </FlowPane.margin>
+                <padding>
+                    <Insets left="-15.0" right="-30.0" />
+                </padding>
+            </Label>
+            <Button fx:id="buttonClear" layoutX="25.0" layoutY="425.0" minHeight="26.0" mnemonicParsing="false" onAction="#onClickClear" prefHeight="26.0" prefWidth="103.0" style="-fx-background-color: lightpink;" text="Очистить поле" textAlignment="CENTER" textFill="#ff0073" wrapText="true">
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <font>
+                    <Font size="10.0" />
+                </font>
+                <FlowPane.margin>
+                    <Insets left="280.0" top="-200.0" />
+                </FlowPane.margin>
+            </Button>
+        </children>
+        <VBox.margin>
+            <Insets />
+        </VBox.margin>
+    </FlowPane>
+    <cursor>
+        <Cursor fx:constant="HAND" />
+    </cursor>
+</VBox>

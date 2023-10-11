@@ -1,0 +1,239 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "models.Circle",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1068799382 { 
+   	label=models
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Circle1068799382[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Circle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   width: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># GetHeight(): double</TD></TR>
+<TR><TD ALIGN="LEFT" ># SetHeight(value: double)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ area(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ draw(gr: GraphicsContext, canvas: Canvas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawHand(gr: GraphicsContext)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Rectangle1068799382[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Rectangle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   length: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># GetHeight(): double</TD></TR>
+<TR><TD ALIGN="LEFT" ># SetHeight(value: double)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ area(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ draw(gr: GraphicsContext, canvas: Canvas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawHand(gr: GraphicsContext)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Shape1068799382[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Shape</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   colorBorder: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   colorFill: Color [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   height: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   lineBorder: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   x: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   x1: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   x2: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   y: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   y1: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   y2: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># GetHeight(): double</TD></TR>
+<TR><TD ALIGN="LEFT" ># SetHeight(value: double)</TD></TR>
+<TR><TD ALIGN="LEFT" ># area(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ draw(gr: GraphicsContext, canvas: Canvas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawHand(gr: GraphicsContext)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Triangle1068799382[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Triangle</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># GetHeight(): double</TD></TR>
+<TR><TD ALIGN="LEFT" ># SetHeight(value: double)</TD></TR>
+<TR><TD ALIGN="LEFT" ># area(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ draw(gc: GraphicsContext, canvas: Canvas)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawHand(gc: GraphicsContext)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_129515976 { 
+   	label=task1
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   HelloController537999333[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HelloController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   borde: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   button1: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   buttonClear: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   canvas: Canvas [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   check: CheckBox [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   colorpickerBorder: ColorPicker [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   colorpickerFill: ColorPicker [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   figure: Shape [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   label0: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   labelBorder: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   labeltoString: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labelx1: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labelx2: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labelx3: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labely1: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labely2: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   labely3: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   logiccircle: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   logichandtriangle: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   logicrectangle: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   x1: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   x2: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   x3: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   y1: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   y2: TextField [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   y3: TextField [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># onClick()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onClick2()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onClick3()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onClick4()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onClick5()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onClickClear()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onMouseClicked(event: MouseEvent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+HelloController537999333 -> Shape1068799382[label="figure
+[0..1]"];
+Shape1068799382 -> Circle1068799382[arrowhead=none, arrowtail=empty, dir=both];
+Shape1068799382 -> Rectangle1068799382[arrowhead=none, arrowtail=empty, dir=both];
+Shape1068799382 -> Triangle1068799382[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
