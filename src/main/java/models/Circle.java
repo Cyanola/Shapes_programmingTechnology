@@ -6,10 +6,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Circle extends Shape {
-    public Circle(int lineBorder, Color colorBorder, Color colorFill, double x, double y, double width, double height) {
+    public Circle(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
-        this.width=width;
-        this.height=height;
+        this.width=35;
+        this.height=35;
     }
 
     @Override

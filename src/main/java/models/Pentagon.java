@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 public class Pentagon extends Shape {
-    public Pentagon(int lineBorder, Color colorBorder, Color colorFill, double x, double y, double width, double height) {
+    public Pentagon(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
 

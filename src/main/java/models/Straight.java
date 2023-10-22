@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Straight extends Shape {
 
-    public Straight(int lineBorder, Color colorBorder, Color colorFill, double x, double y,double width, double height) {
+    public Straight(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
 

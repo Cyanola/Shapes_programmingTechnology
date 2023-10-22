@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 
 public class Angle extends Shape {
 
-    public Angle(double x, double y, int lineBorder, Color colorBorder, Color colorFill,double width, double height) {
+    public Angle(double x, double y, int lineBorder, Color colorBorder, Color colorFill) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
 

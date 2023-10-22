@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Triangle extends Shape {
 
-    public Triangle(int lineBorder, Color colorBorder, Color colorFill, double x, double y,double width, double height) {
+    public Triangle(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
 
