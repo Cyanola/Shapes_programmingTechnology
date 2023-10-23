@@ -56,6 +56,11 @@ public class ShapeFactory implements Creator {
     }
 }
 ```
+
+> [!IMPORTANT]
+> Реализация интерфейса `IFileManager`:
+```java
+
 > [__Содержимое класса контроллера__](src/main/java/com/example/task2/HelloController.java) `HelloController`
 
 > [__Содержимое класса приложения__](src/main/java/com/example/task2/HelloApplication.java) `HelloApplication`
