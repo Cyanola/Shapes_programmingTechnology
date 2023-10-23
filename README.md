@@ -25,30 +25,29 @@
 
 ```java
 public interface Creator {
-    public Shape factoryMethod(String name, double x, double y, int line, Color colorborder, Color colorfill, double width, double height
-    ) ;
+    public Shape factoryMethod(String name, double x, double y, int line, Color colorborder, Color colorfill) ;
 }
 
 public class ShapeFactory implements Creator {
     @Override
-    public Shape factoryMethod(String name, double x, double y, int line, Color colorborder, Color colorfill, double width, double height ){
+    public Shape factoryMethod(String name, double x, double y, int line, Color colorborder, Color colorfill ){
         if(Objects.equals(name, "Пятиугольник")){
-            return new  Pentagon(line, colorborder, colorfill, x, y,0,0);
+            return new  Pentagon(line, colorborder, colorfill, x, y);
         }
         else if(Objects.equals(name, "Квадрат")){
-            return new Square(line, colorborder, colorfill, x, y, width, height);
+            return new Square(line, colorborder, colorfill, x, y);
         }
         else if(Objects.equals(name, "Треугольник")){
-            return new Triangle(line, colorborder, colorfill, x, y,0,0);
+            return new Triangle(line, colorborder, colorfill, x, y);
         }
         else if(Objects.equals(name, "Угол")){
-            return new Angle(x,y,line, colorborder, colorfill,0,0);
+            return new Angle(x,y,line, colorborder, colorfill);
         }
         else if (Objects.equals(name, "Линия") ||Objects.equals(name, "Прямая")){
-            return new Straight(line, colorborder, colorfill, x, y,0,0);
+            return new Straight(line, colorborder, colorfill, x, y);
         }
         else if(Objects.equals(name, "Круг")){
-            return new Circle(line, colorborder, colorfill, x, y, width, height);
+            return new Circle(line, colorborder, colorfill, x, y);
         }
         else{
             return null;
@@ -60,7 +59,111 @@ public class ShapeFactory implements Creator {
 > [!IMPORTANT]
 > Реализация интерфейса `IFileManager`:
 ```java
+public interface IFileManager<T> {
+    public void saveDataToFile(Stack<T> stack) throws FileNotFoundException;
 
+    public Stack<T> loadDataFromFile(File file);
+}
+```
+> [!IMPORTANT]
+> Реализация интерфейса `IRepository`:
+```java
+public interface IRepository {
+    public void addShape(Shape shape);
+    public void popShape();
+    public void setShape(Stack<Shape> stack);
+    public Stack<Shape> getStackShapes();
+}
+```
+> [!IMPORTANT]
+> Реализация класса `FileManagerShape`:
+> ```java
+> public class FIleManagerShape implements IFileManager<Shape> {
+
+    @Override
+    public void saveDataToFile(Stack<Shape> stack) throws FileNotFoundException {
+        String name = LocalTime.now().toString().replace(':','_').replace('.','_');
+        try (FileOutputStream fileOutputStream = new FileOutputStream("file" + name + ".txt");
+             PrintStream printStream = new PrintStream(fileOutputStream)){
+            for (var item: stack) {
+                printStream.println(item.toString());
+            }
+        }
+        catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    @Override
+    public Stack<Shape> loadDataFromFile(File file) {
+        try (FileInputStream fileInputStream = new FileInputStream(file);
+             InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, StandardCharsets.UTF_8)) {
+
+            Stack<Shape> shapes = new Stack<Shape>();
+            ArrayList<String> items = new ArrayList<>();
+            StringBuilder lines = new StringBuilder();
+
+            int count;
+
+            while ((count = inputStreamReader.read()) != -1){
+                if ((char)count == '\n'){
+                    items.add(lines.toString());
+                    lines = new StringBuilder();
+                }
+                else lines.append((char) count);
+            }
+
+            try {
+                for (var item: items) {
+                    shapes.push(this.setShapeHelper(item));
+                }
+                return shapes;
+            }
+            catch (Exception exception){
+                System.out.println(exception.toString());
+            }
+        }
+        catch (Exception exception) {
+            System.out.println(exception.toString());
+        }
+        return null;
+    }
+
+    private Shape setShapeHelper(String info){
+        var args = info.split(" ");
+
+        return new ShapeFactory().factoryMethod(args[0],Double.parseDouble(args[1]),Double.parseDouble(args[2]), (int)Double.parseDouble(args[3]),
+                Color.valueOf(args[4].replace('\r',' ').trim()), Color.valueOf(args[5].replace('\r',' ').trim()));
+    }
+}
+> ```
+> > [!IMPORTANT]
+> Реализация класса `Repository`:
+> ```java
+> public class Repository implements IRepository {
+    private Stack<Shape> _shapes;
+    public Repository(){
+        _shapes = new Stack<>();
+    }
+    @Override
+    public void addShape(Shape shape){
+        _shapes.push(shape);
+    }
+    @Override
+    public void setShape(Stack<Shape> stack) {_shapes = stack;}
+    @Override
+    public void popShape(){
+        if (_shapes.empty()) return;
+        _shapes.pop();
+    }
+    @Override
+    public Stack<Shape> getStackShapes() {
+        if (this._shapes ==null) this._shapes=new Stack<>();
+
+        return this._shapes;
+    }
+}
+> ```
 > [__Содержимое класса контроллера__](src/main/java/com/example/task2/HelloController.java) `HelloController`
 
 > [__Содержимое класса приложения__](src/main/java/com/example/task2/HelloApplication.java) `HelloApplication`
