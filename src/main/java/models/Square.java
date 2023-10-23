@@ -21,7 +21,12 @@ public class Square extends Shape {
         gr.setFill(colorFill);
         gr.fillRect(this.x - (width/2), this.y - (height/2), width, height);
     }
-
+//
+    @Override
+    public String toString()
+    {
+        return "Квадрат" +" " + super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
+    }
 
 
     @Override

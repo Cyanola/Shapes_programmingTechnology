@@ -23,6 +23,8 @@ public class Repository implements IRepository {
     }
     @Override
     public Stack<Shape> getStackShapes() {
+        if (this._shapes ==null) this._shapes=new Stack<>();
+
         return this._shapes;
     }
 }

@@ -24,13 +24,10 @@ public class Triangle extends Shape {
         gc.setLineWidth(this.lineBorder);
 
         gc.moveTo(x, y);
-        double origin = canvas.maxHeight(Double.MAX_VALUE);
-        double bound = canvas.maxWidth(Double.MAX_VALUE);
-        gc.lineTo(rnd.nextDouble(bound) , rnd.nextDouble(origin));
 
-        origin = canvas.maxHeight(Double.MAX_VALUE);
-        bound = canvas.maxWidth(Double.MAX_VALUE);
-        gc.lineTo(rnd.nextDouble(bound) , rnd.nextDouble(origin));
+        gc.lineTo(x-50 , y+100);
+
+        gc.lineTo(x+50 , y+100);
 
 
         gc.lineTo(x,y);
@@ -42,6 +39,11 @@ public class Triangle extends Shape {
 //// End the Path
 
         gc.closePath();
+    }
+    @Override
+    public String toString()
+    {
+        return "Треугольник" + " "+super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
     }
     @Override
     void setWidth(double value) {

@@ -46,4 +46,11 @@ public class Angle extends Shape {
     @Override
     public  String  descriptor() {
         return "Цвет границы угла: " + super.colorBorder;     }
+
+    @Override
+    public String toString()
+    {
+            return "Угол" +" "+ super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
+    }
+
 }

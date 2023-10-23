@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import models.Shape;
@@ -19,6 +20,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Stack;
 
 public class HelloController implements Initializable {
     @FXML
@@ -36,6 +38,8 @@ public class HelloController implements Initializable {
     @FXML
     private TextField heightCount;
 
+
+    Shape shape;
     @FXML
     private TextField borderCount;
 
@@ -64,13 +68,11 @@ public class HelloController implements Initializable {
     protected void onMouseClicked(MouseEvent event) {
         //get an object  and call its draw method.
 
-        Shape shape = shapeFactory.factoryMethod(txtCount.getText(), event.getX(), event.getY(),
+     shape = shapeFactory.factoryMethod(txtCount.getText(), event.getX(), event.getY(),
                 Integer.parseInt(borderCount.getText()),borderPicker.getValue(), fillPicker.getValue());
 
-        //получить контекст(холст) для рисования
-
-        shape.draw(canvas,gc);
         stack_shapes.addShape(shape);
+        shape.draw(canvas,gc);
         info.setText(shape.descriptor());
     }
     private Repository stack_shapes;
@@ -80,6 +82,7 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shapeFactory = new ShapeFactory();
+        spinner = new Spinner<>();
         gc = canvas.getGraphicsContext2D();
         fIleManager = new FIleManagerShape();
         stack_shapes = new Repository();
@@ -102,8 +105,8 @@ public class HelloController implements Initializable {
         InitShapes();
     }
     private void InitShapes(){
-      gc= canvas.getGraphicsContext2D();
-        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+       gc.setFill(Color.web("#D2E6E7"));
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         for (var item: stack_shapes.getStackShapes()) {
             item.draw(canvas,gc);

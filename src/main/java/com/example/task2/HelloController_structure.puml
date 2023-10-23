@@ -86,7 +86,7 @@ digraph g {
 subgraph cluster_1068799382 { 
    	label=models
 	labeljust=l
-	fillcolor="#ececec"
+	fillcolor="#7AD3AD"
 	style=filled
    
    Angle1068799382[
@@ -99,7 +99,7 @@ subgraph cluster_1068799382 {
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Circle1068799382[
@@ -112,7 +112,7 @@ Circle1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Pentagon1068799382[
@@ -125,7 +125,7 @@ Pentagon1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Rectangle1068799382[
@@ -143,7 +143,7 @@ Rectangle1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Shape1068799382[
@@ -164,7 +164,7 @@ Shape1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Square1068799382[
@@ -177,7 +177,7 @@ Square1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Straight1068799382[
@@ -190,7 +190,7 @@ Straight1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 
 Triangle1068799382[
@@ -203,20 +203,20 @@ Triangle1068799382[
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 } 
 
 subgraph cluster_1322970774 { 
    	label=example
 	labeljust=l
-	fillcolor="#ececec"
+	fillcolor="#7AD3AD"
 	style=filled
    
    subgraph cluster_129515977 { 
    	label=task2
 	labeljust=l
-	fillcolor="#d8d8d8"
+	fillcolor="#7AD3AD"
 	style=filled
    
    HelloController537999332[
@@ -227,49 +227,106 @@ subgraph cluster_1322970774 {
 <TR><TD ALIGN="LEFT" >-   borderPicker: ColorPicker [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   canvas: Canvas [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   clearbutton: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fIleManager: FIleManagerShape [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   fillPicker: ColorPicker [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >+   flowpane: FlowPane [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   gc: GraphicsContext [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   heightCount: TextField [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   info: Label [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   initialValue: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   openBut: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   retBut: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   saveBut: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   shape: Shape [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >#   shapeFactory: ShapeFactory [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   spinner: Spinner&lt;Integer&gt; [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   stack_shapes: Repository [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   txtCount: TextField [0..1]</TD></TR>
 <TR><TD ALIGN="LEFT" >-   widthCount: TextField [0..1]</TD></TR>
 <HR/>
+<TR><TD ALIGN="LEFT" >- InitShapes()</TD></TR>
 <TR><TD ALIGN="LEFT" >+ initialize(url: URL, resourceBundle: ResourceBundle)</TD></TR>
 <TR><TD ALIGN="LEFT" ># onClear()</TD></TR>
 <TR><TD ALIGN="LEFT" ># onMouseClicked(event: MouseEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onOpen(actionEvent: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onReturn(actionEvent: ActionEvent)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onSave(actionEvent: ActionEvent)</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 } 
+} 
+
+subgraph cluster_310602149 { 
+   	label=FileSaveLogic
+	labeljust=l
+	fillcolor="#7AD3AD"
+	style=filled
+   
+   FIleManagerShape310602149[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)FIleManagerShape</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ loadDataFromFile(file: File): Stack&lt;Shape&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ saveDataToFile(stack: Stack&lt;Shape&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >- setShapeHelper(info: String): Shape</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#DEDA61"
+];
+
+Repository310602149[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Repository</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   _shapes: Stack&lt;Shape&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ addShape(shape: Shape)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ popShape()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#DEDA61"
+];
 } 
 
 subgraph cluster_572770538 { 
    	label=Factory
 	labeljust=l
-	fillcolor="#ececec"
+	fillcolor="#7AD3AD"
 	style=filled
    
    ShapeFactory572770538[
 	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
 <TR><TD ALIGN="LEFT" >(C)ShapeFactory</TD></TR>
 <HR/>
-<TR><TD ALIGN="LEFT" >+ factoryMethod(name: String, x: double, y: double, line: int, colorborder: Color, colorfill: Color, width: double, height: double): Shape</TD></TR>
+<TR><TD ALIGN="LEFT" >+ factoryMethod(name: String, x: double, y: double, line: int, colorborder: Color, colorfill: Color): Shape</TD></TR>
 </TABLE>>
 	style=filled
 	margin=0
 	shape=plaintext
-	fillcolor="#FFFFFF"
+	fillcolor="#DEDA61"
 ];
 } 
 
 'edges    
+FIleManagerShape310602149 -> ShapeFactory572770538[label="setShapeHelper() -> factoryMethod()"];
+HelloController537999332 -> FIleManagerShape310602149[label="fIleManager
+[0..1]"];
+HelloController537999332 -> Repository310602149[label="stack_shapes
+[0..1]"];
+HelloController537999332 -> Shape1068799382[label="shape
+[0..1]"];
 HelloController537999332 -> ShapeFactory572770538[label="shapeFactory
 [0..1]"];
+Repository310602149 -> Shape1068799382[label="_shapes
+[0..*]"];
 Shape1068799382 -> Angle1068799382[arrowhead=none, arrowtail=empty, dir=both];
 Shape1068799382 -> Circle1068799382[arrowhead=none, arrowtail=empty, dir=both];
 Shape1068799382 -> Pentagon1068799382[arrowhead=none, arrowtail=empty, dir=both];

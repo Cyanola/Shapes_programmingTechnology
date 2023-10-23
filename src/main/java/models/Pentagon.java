@@ -49,4 +49,9 @@ public class Pentagon extends Shape {
         );
 
     }
+    @Override
+    public String toString()
+    {
+        return "Пятиугольник"+" " + super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
+    }
 }

@@ -11,7 +11,11 @@ public class Straight extends Shape {
     public Straight(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
-
+    @Override
+    public String toString()
+    {
+        return "Прямая" +" " + super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
+    }
     @Override
     public void draw(Canvas canvas, GraphicsContext gc) {
 //Start the Path

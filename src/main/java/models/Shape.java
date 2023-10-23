@@ -71,5 +71,6 @@ public abstract class Shape {
         this.colorFill = colorFill;
     }
 
+    public abstract String toString();
 
 }

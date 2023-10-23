@@ -10,6 +10,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -18,7 +19,8 @@ public class FIleManagerShape implements IFileManager<Shape> {
 
     @Override
     public void saveDataToFile(Stack<Shape> stack) throws FileNotFoundException {
-        try (FileOutputStream fileOutputStream = new FileOutputStream("file" + LocalDate.now().toString() + ".txt");
+        String name = LocalTime.now().toString().replace(':','_').replace('.','_');
+        try (FileOutputStream fileOutputStream = new FileOutputStream("file" + name + ".txt");
              PrintStream printStream = new PrintStream(fileOutputStream)){
             for (var item: stack) {
                 printStream.println(item.toString());
@@ -66,7 +68,8 @@ public class FIleManagerShape implements IFileManager<Shape> {
 
     private Shape setShapeHelper(String info){
         var args = info.split(" ");
-        return new ShapeFactory().factoryMethod(args[0],Double.parseDouble(args[1]),Double.parseDouble(args[2]), Integer.parseInt(args[3]),
+
+        return new ShapeFactory().factoryMethod(args[0],Double.parseDouble(args[1]),Double.parseDouble(args[2]), (int)Double.parseDouble(args[3]),
                 Color.valueOf(args[4].replace('\r',' ').trim()), Color.valueOf(args[5].replace('\r',' ').trim()));
     }
 }

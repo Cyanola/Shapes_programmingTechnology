@@ -44,4 +44,9 @@ public class Circle extends Shape {
     @Override
     public  String descriptor() {
         return "Цвет заливки круга " + super.colorFill +  "а границы : " + super.colorBorder;     }
+    @Override
+    public String toString()
+    {
+        return "Круг"+" " + super.getX()+" "+super.getY()+" "+super.getLineBorder()+" "+super.getColorBorder().toString()+" "+super.getColorFill().toString();
+    }
 }
