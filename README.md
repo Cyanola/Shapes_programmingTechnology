@@ -77,8 +77,8 @@ public interface IRepository {
 ```
 > [!IMPORTANT]
 > Реализация класса `FileManagerShape`:
-> ```java
-> public class FIleManagerShape implements IFileManager<Shape> {
+```java
+ public class FIleManagerShape implements IFileManager<Shape> {
 
     @Override
     public void saveDataToFile(Stack<Shape> stack) throws FileNotFoundException {
@@ -136,11 +136,11 @@ public interface IRepository {
                 Color.valueOf(args[4].replace('\r',' ').trim()), Color.valueOf(args[5].replace('\r',' ').trim()));
     }
 }
-> ```
-> > [!IMPORTANT]
+```
+> [!IMPORTANT]
 > Реализация класса `Repository`:
-> ```java
-> public class Repository implements IRepository {
+```java
+ public class Repository implements IRepository {
     private Stack<Shape> _shapes;
     public Repository(){
         _shapes = new Stack<>();
@@ -163,7 +163,7 @@ public interface IRepository {
         return this._shapes;
     }
 }
-> ```
+```
 > [__Содержимое класса контроллера__](src/main/java/com/example/task2/HelloController.java) `HelloController`
 
 > [__Содержимое класса приложения__](src/main/java/com/example/task2/HelloApplication.java) `HelloApplication`
