@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         Button button2 = new Button();
         Button button1 = new Button();
         Button button3 = new Button();
-
+//
         FlowPane root = new FlowPane();
         Canvas canvas= new Canvas();
         root.getChildren().add(canvas);
