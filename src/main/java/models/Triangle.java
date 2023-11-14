@@ -11,6 +11,9 @@ public class Triangle extends Shape {
     public Triangle(int lineBorder, Color colorBorder, Color colorFill, double x, double y) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
+    public Triangle(){
+        super(4,Color.web("#20843B"), Color.web("#86DE9E"),54,49);
+    }
 
     @Override
     public void draw(Canvas canvas,GraphicsContext gc ) {

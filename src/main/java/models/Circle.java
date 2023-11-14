@@ -11,6 +11,11 @@ public class Circle extends Shape {
         this.width=35;
         this.height=35;
     }
+    public Circle(){
+        super(4,Color.web("#CF86A0"), Color.web("#A8F3B6"),100,100);
+        this.width=35;
+        this.height=35;
+    }
 
     @Override
     void setHeight(double value) {

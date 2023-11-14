@@ -13,6 +13,10 @@ public class Pentagon extends Shape {
     public String descriptor() {
         return "Цвет заливки пятиугольника " + super.colorFill +  "а границы : " + super.colorBorder;     }
 
+    public Pentagon(){
+        super(7,Color.web("#E5B12F"), Color.web("#B2DF42"),11,258);
+    }
+
     @Override
     void setHeight(double value) {
         height = value;

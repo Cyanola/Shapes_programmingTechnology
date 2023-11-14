@@ -10,7 +10,9 @@ public class Angle extends Shape {
     public Angle(double x, double y, int lineBorder, Color colorBorder, Color colorFill) {
         super(lineBorder, colorBorder, colorFill, x, y);
     }
-
+    public Angle(){
+        super(4,Color.web("#F2A8F3"), Color.web("#F3E9A8"),35,71);
+    }
     @Override
     public void draw(Canvas canvas, GraphicsContext gr) {
         gr.setStroke(colorBorder);

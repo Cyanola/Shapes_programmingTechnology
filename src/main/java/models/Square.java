@@ -11,7 +11,11 @@ public class Square extends Shape {
         this.width = 35;
         this.height=35;
     }
-
+    public Square(){
+        super(10,Color.web("#5C7073"), Color.web("#BDCBA1"),40,125);
+        this.width=35;
+        this.height=35;
+    }
     @Override
     public void draw(Canvas canvas, GraphicsContext gr) {
         gr.setStroke(colorBorder);

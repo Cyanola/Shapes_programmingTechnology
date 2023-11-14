@@ -39,6 +39,9 @@ public class Straight extends Shape {
 
         gc.closePath();
     }
+    public Straight(){
+        super(9,Color.web("#79636D"), Color.web("#A8F3B6"),69,364);
+    }
     @Override
     void setHeight(double value) {
         height = value;
