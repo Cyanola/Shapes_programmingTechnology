@@ -1,0 +1,258 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.task8.HelloController",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_129515983 { 
+   	label=task8
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   HelloController537999326[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HelloController</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   paneBalls: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paneGirland: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paneMishura: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   panePresent: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paneStar: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   paneTree: Pane [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   tree: ChristmasTree [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- addAll()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addBalls()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addLights()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addMishura()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addPresents()</TD></TR>
+<TR><TD ALIGN="LEFT" >- addStar()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ initialize(location: URL, resources: ResourceBundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >- removeAll()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+subgraph cluster_1762961381 { 
+   	label=Decorator
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   TreeDecorator1762961381[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TreeDecorator</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   tree: ChristmasTree [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1984932214 { 
+   	label=Models
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Balls1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Balls</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colors: ArrayList&lt;Color&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   random: Random [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   shapes: ArrayList&lt;Shape&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawBalls(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+ChristmasTreeImpl1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ChristmasTreeImpl</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Girland1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Girland</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+   circle: Circle[] [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   colors: ArrayList&lt;Color&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   random: Random [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+<TR><TD ALIGN="LEFT" >- drawGirland(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Mishura1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Mishura</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colors: ArrayList&lt;Color&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   random: Random [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ drawMishura(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Presents1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Presents</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   colors: ArrayList&lt;Color&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   random: Random [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   shapes: ArrayList&lt;Shape&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >- createPresent(posX: int, posY: int, size: int): Collection&lt;Shape&gt;</TD></TR>
+<TR><TD ALIGN="LEFT" >+ draw(pane: Pane)</TD></TR>
+<TR><TD ALIGN="LEFT" >- drawPresents(pane: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Star1984932214[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Star</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ draw(paneStar: Pane)</TD></TR>
+<TR><TD ALIGN="LEFT" >- drawStar(paneStar: Pane)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+HelloController537999326 -> ChristmasTreeImpl1984932214[arrowhead=none];
+HelloController537999326 -> TreeDecorator1762961381[arrowhead=none];
+TreeDecorator1762961381 -> Balls1984932214[arrowhead=none, arrowtail=empty, dir=both];
+TreeDecorator1762961381 -> Girland1984932214[arrowhead=none, arrowtail=empty, dir=both];
+TreeDecorator1762961381 -> Mishura1984932214[arrowhead=none, arrowtail=empty, dir=both];
+TreeDecorator1762961381 -> Presents1984932214[arrowhead=none, arrowtail=empty, dir=both];
+TreeDecorator1762961381 -> Star1984932214[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml
