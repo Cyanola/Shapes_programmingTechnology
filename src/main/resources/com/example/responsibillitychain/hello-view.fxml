@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<VBox fx:id="mainWindow" alignment="CENTER" maxHeight="300.0" maxWidth="760.0" minHeight="300.0" minWidth="760.0" prefHeight="300.0" prefWidth="760.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.responsibillitychain.HelloController">
+
+   <children>
+      <Pane fx:id="mainPane" minHeight="220.0" prefHeight="220.0" prefWidth="375.0" style="-fx-background-color: mistyrose;" />
+      <FlowPane prefHeight="0.0" prefWidth="315.0">
+          <padding>
+              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+         <children>
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#initialize" text="Заново" />
+            <Circle fill="DODGERBLUE" radius="12.0" stroke="BLACK" strokeType="INSIDE">
+               <FlowPane.margin>
+                  <Insets left="15.0" />
+               </FlowPane.margin>
+            </Circle>
+            <Label fx:id="labelD" text="Алмазы: " />
+            <Circle fill="#ff1f1f" radius="12.0" stroke="BLACK" strokeType="INSIDE">
+               <FlowPane.margin>
+                  <Insets left="40.0" />
+               </FlowPane.margin></Circle>
+            <Label fx:id="labelR" text="Редстоун:" />
+            <Circle fill="#ffff00" radius="12.0" stroke="BLACK" strokeType="INSIDE">
+               <FlowPane.margin>
+                  <Insets left="23.0" />
+               </FlowPane.margin></Circle>
+            <Label fx:id="labelG" text="Золото:" />
+            <Circle fill="GREEN" layoutX="263.0" layoutY="43.0" radius="12.0" stroke="GREEN" strokeType="INSIDE">
+               <FlowPane.margin>
+                  <Insets left="24.0" />
+               </FlowPane.margin></Circle>
+            <Label fx:id="labelH" layoutX="275.0" layoutY="34.0" text="Здоровье:" />
+         </children>
+      </FlowPane>
+   </children>
+</VBox>
